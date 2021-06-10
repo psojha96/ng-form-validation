@@ -1,0 +1,72 @@
+:root{
+    --msg-err-bg:  red;
+  }
+   
+  .msg-err {
+    color: blue;
+    position: absolute;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.1);;
+    padding: 5px 10px;
+    width: 100%;
+    max-width:max-content;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    white-space:normal;
+  
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      border-style: solid;
+    }
+  
+    &.top {
+      bottom: calc(100% + 7px);
+      left: 0;
+  
+      &:before {
+        top: 100%;
+        left: 10px;
+        border-width: 8px 8px 0px;
+        border-color: var(--msg-err-bg) transparent transparent;
+      }
+    }
+  
+    &.bottom {
+      top: calc(100% + 7px);
+      left: 0;
+  
+      &:before {
+        bottom: calc(100% - 2px);
+        left: 10px;
+        border-width: 0 8px 8px;
+        border-color: transparent transparent var(--msg-err-bg);
+      }
+    }
+  
+    &.left {
+      top: 0;
+      right: calc(100% + 7px);
+  
+      &:before {
+        top: 5px;
+        right: -7px;
+        border-width: 8px 0px 8px 8px;
+        border-color: transparent var(--msg-err-bg) transparent;
+      }
+    }
+  
+    &.right {
+      top: 0;
+      left: calc(100% + 7px);
+  
+      &:before {
+        top: 5px;
+        left: -7px;
+        border-width: 8px 8px 8px 0px;
+        border-color: transparent var(--msg-err-bg) transparent;
+      }
+    }
+  }
+  

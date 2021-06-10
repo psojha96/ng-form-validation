@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Employee } from 'src/models/employee.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ng-Form-Validation';
+  employee: Employee;
+  constructor() {
+    this.employee = new Employee();
+  }
+
+  onSubmit(formObj: NgForm) {
+    console.log(formObj);
+  }
 }
